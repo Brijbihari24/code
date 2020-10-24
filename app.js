@@ -9,6 +9,8 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.listen(5000,() => console.log('server started on port 5000'));
+
 app.post('/api/posts', verifyToken, (req, res) => {  
   jwt.verify(req.token, 'secretkey', (err, authData) => {
     if(err) {
